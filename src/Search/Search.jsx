@@ -7,19 +7,11 @@ import {
   Row,
   Card,
 } from "react-bootstrap";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 function Search() {
-  const [post, setPost] = useState([]);
-  const [posts, setPosts] = useState([]);
+  const [post, setPost] = useState({});
   const [searchInput, setSearchInput] = useState("");
-
-//   useEffect(() => {
-//     var test = {};
-//     fetch("https://jsonplaceholder.typicode.com/posts")
-//       .then((response) => response.json())
-//       .then((json) => setPosts(json));
-//   }, []);
 
   async function search() {
     console.log("Search for " + searchInput);
@@ -36,9 +28,6 @@ function Search() {
     )
       .then((response) => response.json())
       .then((data) => {
-        //return data.artists.items[0].id;
-        console.log("data");
-        console.log(data);
         setPost(data);
       });
   }
@@ -64,28 +53,14 @@ function Search() {
       </Container>
       <Container>
         <Row className="mx-2 row row-cols-4">
-        <Card key={post.id} className="m-5 p-4 text-center">
+        <div key={post.id} className="m-5 p-4 text-justify ">
                 <Card.Body>
-                  <Card.Title>{post.title}</Card.Title>
-                  <Card.Subtitle className="my-2">
-                    {post.description}
+                  <Card.Title className="h2">{post.title}</Card.Title>
+                  <Card.Subtitle className="my-4 text-muted">
+                    {post.body}
                   </Card.Subtitle>
                 </Card.Body>
-              </Card>
-
-          {/* {posts.map((post, i) => {
-            console.log(post);
-            return (
-              <Card key={post.id} className="m-5 p-4 text-center">
-                <Card.Body>
-                  <Card.Title>{post.title}</Card.Title>
-                  <Card.Subtitle className="my-2">
-                    {post.description}
-                  </Card.Subtitle>
-                </Card.Body>
-              </Card>
-            );
-          })} */}
+              </div>
         </Row>
       </Container>
     </>
