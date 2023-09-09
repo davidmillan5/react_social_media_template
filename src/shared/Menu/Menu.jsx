@@ -1,12 +1,20 @@
 import './Menu.css';
 import { Link } from 'react-router-dom';
+import {
+  HouseFill,
+  GlobeAmericas,
+  PersonFill,
+  EnvelopeFill,
+  BellFill,
+} from 'react-bootstrap-icons';
 export function Menu() {
   return (
     <>
-      <nav className="navbar navbar-expand-lg menu navbar-dark ">
-        <div className="container-fluid">
+      <nav className="navbar navbar-expand-lg menu navbar-dark">
+        <div className="container-fluid ">
+          <HouseFill color="white" size={32} className="mx-3" />
           <Link className="navbar-brand" to="/">
-            Rayden
+            Logo
           </Link>
           <button
             className="navbar-toggler"
@@ -26,44 +34,25 @@ export function Menu() {
             <ul className="navbar-nav">
               <li className="nav-item">
                 <Link className="nav-link active" aria-current="page" to="/">
-                  Home
+                  <GlobeAmericas color="white" size={32} className="mx-3" />
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/bio">
-                  Bio
+                  <PersonFill color="white" size={32} className="mx-3" />
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/discography">
-                  Discography
+                  <EnvelopeFill color="white" size={32} className="mx-3" />
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/concerts">
-                  Concerts
+                  <BellFill color="white" size={32} className="mx-3" />
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/shop">
-                  Shop
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/featuring">
-                  Featuring
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/fanzone">
-                  Fanzone
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/registration">
-                  Registration
-                </Link>
-              </li>
+
               {/* <li className="nav-item">
                 <Link className="nav-link" to="/button">
                   Button
@@ -74,11 +63,6 @@ export function Menu() {
                   Music
                 </Link>
               </li> */}
-              <li className="nav-item">
-                <Link className="nav-link" to="/topTracks">
-                  Top Tracks
-                </Link>
-              </li>
             </ul>
           </div>
         </div>

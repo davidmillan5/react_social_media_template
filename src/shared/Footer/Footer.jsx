@@ -1,13 +1,14 @@
+import './Footer.css';
 export function Footer() {
   return (
     <>
       <div className="container-fluid">
         <div className="row">
           <p
-            className="text-center bg-dark bg-gradient fw-bold text-light fs-5"
+            className="text-center footer bg-gradient fw-bold text-light fs-5"
             id="Bio"
           >
-            2023 © RAYDEN
+            Footer
           </p>
         </div>
       </div>
